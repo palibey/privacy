@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>No Chromosomes Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px; /* Add margin to separate from pagination */
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #333;
+            font-size: 16px;
+        }
+
+        .pagination-container {
+            text-align: center; /* Center align the content */
+        }
+
+        /* Style for pagination links */
+        .pagination {
+            display: flex;
+            justify-content: center; /* Center align the child elements */
+            margin-top: 10px; /* Adjust margin for spacing */
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: #007bff;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        /* Style for previous link */
+        .pagination a.prev {
+            margin-right: 10px;
+        }
+
+        /* Style for next link */
+        .pagination a.next {
+            margin-left: 10px;
+        }
+
+        /* Hover effect for pagination links */
+        .pagination a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .abc{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column; /* Stack items vertically */
+        }
+    </style>
+</head>
+<body>
+<div class="abc">
+    <div>
+        <div class="container">
+            <h1>For Privacy Reasons We Cannot Disclose This Chromosome</h1>
+            <p>This chromosome is restricted and cannot be accessed.</p>
+        </div>
+    </div>
+    <div>
+        <!-- Pagination container -->
+        <div class="pagination-container">
+            <!-- Pagination buttons -->
+            <div class="pagination" th:if="${page > 1 || page < 23}">
+                <!-- Previous button -->
+                <a th:if="${page > 1}" th:href="${page - 1}" class="prev">Previous</a>
+
+                <!-- Next button -->
+                <a th:if="${page < 23}" th:href="${page + 1}" class="next">Next</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Add any additional content or instructions as needed -->
+</body>
+</html>

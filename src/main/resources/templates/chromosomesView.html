@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chromosomes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #e9e9e9;
+        }
+
+        .pagination-container {
+            margin-top: 20px;
+            text-align: center; /* Center align the content */
+        }
+
+        /* Style for pagination links */
+        .pagination {
+            display: flex;
+            justify-content: center; /* Center align the child elements */
+            margin-top: 10px; /* Adjust margin for spacing */
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: #007bff;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        /* Style for previous link */
+        .pagination a.prev {
+            margin-right: 10px;
+        }
+
+        /* Style for next link */
+        .pagination a.next {
+            margin-left: 10px;
+        }
+
+        /* Hover effect for pagination links */
+        .pagination a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="pagination-container">
+    <!-- Pagination buttons -->
+    <div class="pagination" th:if="${page > 1 || page < 23}">
+        <!-- Previous button -->
+        <a th:if="${page > 1}" th:href="${page - 1}" class="prev">Previous</a>
+
+        <!-- Next button -->
+        <a th:if="${page < 23}" th:href="${page + 1}" class="next">Next</a>
+    </div>
+</div>
+
+
+<h1>Chromosomes</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Chromosome Number</th>
+        <th>RSID</th>
+        <th>Allele</th>
+        <!-- Add more table headers if needed -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="chromosome : ${chromosomes}">
+        <td th:text="${chromosome.chromosomeNum}"></td>
+        <td th:text="${chromosome.rsid}"></td>
+        <td th:text="${chromosome.allale}"></td>
+        <!-- Add more table cells to display additional data -->
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

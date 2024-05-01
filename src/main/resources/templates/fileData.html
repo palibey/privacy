@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>File Data</title>
+</head>
+<body>
+<h1>File: <span th:text="${fileName}"></span></h1>
+
+<h2>Header</h2>
+<ul>
+    <li th:each="column : ${header}" th:text="${column}"></li>
+</ul>
+
+<h2>Data</h2>
+<table>
+    <thead>
+    <tr th:each="row : ${data}">
+        <th th:each="cell : ${row}" th:text="${cell}"></th>
+    </tr>
+    </thead>
+</table>
+</body>
+</html>
