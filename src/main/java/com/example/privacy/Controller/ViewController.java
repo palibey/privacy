@@ -19,7 +19,7 @@ import java.util.List;
 @Controller
 public class ViewController {
 
-    private final String folderPath = "C:\\Users\\erend\\Desktop\\Spring2023-2024\\Privacy\\dataset"; // Replace with your folder path
+    private final String folderPath = "src/main/resources/static"; // Replace with your folder path
 
     private final ChromosomeParser chromosomeParser;
     private final GeneFileService geneFileService;
