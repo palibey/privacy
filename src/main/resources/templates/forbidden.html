@@ -22,7 +22,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            margin-bottom: 20px; /* Add margin to separate from pagination */
+            margin-bottom: 20px;
         }
 
         h1 {
@@ -36,14 +36,13 @@
         }
 
         .pagination-container {
-            text-align: center; /* Center align the content */
+            text-align: center;
         }
 
-        /* Style for pagination links */
         .pagination {
             display: flex;
-            justify-content: center; /* Center align the child elements */
-            margin-top: 10px; /* Adjust margin for spacing */
+            justify-content: center;
+            margin-top: 10px;
         }
 
         .pagination a {
@@ -56,17 +55,14 @@
             transition: background-color 0.3s;
         }
 
-        /* Style for previous link */
         .pagination a.prev {
             margin-right: 10px;
         }
 
-        /* Style for next link */
         .pagination a.next {
             margin-left: 10px;
         }
 
-        /* Hover effect for pagination links */
         .pagination a:hover {
             background-color: #007bff;
             color: #fff;
@@ -75,7 +71,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column; /* Stack items vertically */
+            flex-direction: column;
         }
     </style>
 </head>
@@ -88,21 +84,15 @@
         </div>
     </div>
     <div>
-        <!-- Pagination container -->
         <div class="pagination-container">
-            <!-- Pagination buttons -->
             <div class="pagination" th:if="${page > 1 || page < 23}">
-                <!-- Previous button -->
                 <a th:if="${page > 1}" th:href="${page - 1}" class="prev">Previous</a>
 
-                <!-- Next button -->
                 <a th:if="${page < 23}" th:href="${page + 1}" class="next">Next</a>
             </div>
         </div>
     </div>
 </div>
 
-
-<!-- Add any additional content or instructions as needed -->
 </body>
 </html>

@@ -58,7 +58,7 @@ public class ChromosomeController {
     public String getNum2(@PathVariable String file, @PathVariable String chromosomeNum, Model model) {
         List<Chromosome> chromosomes = chromosomeService.getAllByFileAndNum(file,chromosomeNum);
         Random rand = new Random();
-        double probability = 0.3;
+        double probability = 0.4;
         for (Chromosome chromosome : chromosomes) {
             double randomValue = rand.nextDouble();
             if (randomValue <= probability) {
