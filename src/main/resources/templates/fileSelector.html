@@ -81,8 +81,14 @@
 
             <form method="get" th:action="@{/viewFile}">
                 <input type="hidden" name="fileName" th:value="${fileName}" />
-                <input type="hidden" name="payload" value="partial" />
-                <button type="submit">Partial</button>
+                <input type="hidden" name="payload" value="partial-v1" />
+                <button type="submit">Partial-v1</button>
+            </form>
+
+            <form method="get" th:action="@{/viewFile}">
+                <input type="hidden" name="fileName" th:value="${fileName}" />
+                <input type="hidden" name="payload" value="partial-v2" />
+                <button type="submit">Partial-v2</button>
             </form>
 
             <form method="get" th:action="@{/viewFile}">
